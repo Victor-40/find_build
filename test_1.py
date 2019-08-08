@@ -52,7 +52,7 @@ conn = sqlite3.connect('db.sqlite3')
 cursor = conn.cursor()
 
 # cursor.execute("SELECT Name FROM Artist ORDER BY Name LIMIT 3")
-cursor.execute("SELECT vm_name, vm_path, vm_snap, prod_prefix FROM fenix_maindb where production =='1'")
+cursor.execute("SELECT vm_name, vm_path, vm_snap, prod_prefix FROM fenix_maindb WHERE production =='1'")
 
 results = cursor.fetchall()
 # for i in results:
