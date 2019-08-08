@@ -72,13 +72,14 @@ for i in all_lst:
         setup_lst.append(mm.group(0))
 
 result_lst = list()
-for i in setup_lst:
-    # print(i)
-    curr_prefix = find_prefix(i)
+for setup_path in setup_lst:
+    # print(setup_path)
+    curr_prefix = find_prefix(setup_path)
 
     for j in results:
-        if j[3] == curr_prefix:
-            result_lst.append([i, j[0].replace('.vmx', ''), j[1], j[2], '0'])
+        vm_name, vm_path, snapshot_name, prefix = j
+        if prefix == curr_prefix:
+            result_lst.append([setup_path, vm_name, vm_path, snapshot_name, '0'])
     # break
 
 ##### Excel ################

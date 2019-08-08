@@ -6,11 +6,6 @@ import sys
 import win32com.client as win32
 
 
-
-
-
-#########  db  ##############
-
 conn = sqlite3.connect('db.sqlite3')
 cursor = conn.cursor()
 
@@ -28,7 +23,5 @@ results = cursor.fetchall()
 for i in results:
     print(i)
 
-# Не забываем закрыть соединение с базой данных
 conn.close()
-##########
 
